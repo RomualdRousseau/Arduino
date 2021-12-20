@@ -1,0 +1,212 @@
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+menu.cpu=Processor
+menu.clock=Clock
+menu.bootloader=Bootloader
+
+##############################################################
+
+atmega32.name=ATMega 32
+atmega32.build.core=standard
+atmega32.build.mcu=atmega32a
+atmega32.build.mcu.variant=
+atmega32.build.board=AVR_ATMEGA32
+atmega32.build.variant=standard
+atmega32.bootloader.tool=minipro
+atmega32.bootloader.unlock_bits=0x3F
+atmega32.bootloader.lock_bits=0xCF
+atmega32.upload.tool=avrdude_noef
+atmega32.upload.maximum_data_size=2048
+
+atmega32.menu.clock.1=1 MHz (internal oscillator)
+atmega32.menu.clock.1.build.f_cpu=1000000L
+atmega32.menu.clock.1.build.speed=1
+atmega32.menu.clock.1.bootloader.low_fuses=0xA1
+atmega32.menu.clock.1.upload.speed=9600
+
+atmega32.menu.clock.8=8 MHz (internal oscillator)
+atmega32.menu.clock.8.build.f_cpu=8000000L
+atmega32.menu.clock.8.build.speed=8
+atmega32.menu.clock.8.bootloader.low_fuses=0xA4
+atmega32.menu.clock.8.upload.speed=38400
+
+atmega32.menu.clock.16=16 MHz (external oscillator)
+atmega32.menu.clock.16.build.f_cpu=16000000L
+atmega32.menu.clock.16.build.speed=16
+atmega32.menu.clock.16.bootloader.low_fuses=0xBF
+atmega32.menu.clock.16.upload.speed=115200
+
+atmega32.menu.clock.20=20 MHz (external oscillator)
+atmega32.menu.clock.20.build.f_cpu=20000000L
+atmega32.menu.clock.20.build.speed=20
+atmega32.menu.clock.20.bootloader.low_fuses=0x3F
+atmega32.menu.clock.20.upload.speed=115200
+
+atmega32.menu.bootloader.empty=Empty
+atmega32.menu.bootloader.empty.bootloader.high_fuses=0xD6
+atmega32.menu.bootloader.empty.bootloader.file=empty/empty.hex
+atmega32.menu.bootloader.empty.upload.maximum_size=32768
+
+atmega32.menu.bootloader.optiboot=Optiboot
+atmega32.menu.bootloader.optiboot.bootloader.high_fuses=0xDE
+atmega32.menu.bootloader.optiboot.bootloader.file=optiboot/{build.mcu}/optiboot_{build.mcu}_{build.speed}MHz.hex
+atmega32.menu.bootloader.optiboot.upload.maximum_size=32256
+atmega32.menu.bootloader.optiboot.upload.protocol=arduino
+
+##############################################################
+
+atmega64.name=ATMega 644P
+atmega64.build.core=standard
+atmega64.build.mcu=atmega644p
+atmega64.build.mcu.variant=
+atmega64.build.board=AVR_ATMEGA644P
+atmega64.build.variant=standard
+atmega64.bootloader.tool=minipro
+atmega64.bootloader.unlock_bits=0x3F
+atmega64.bootloader.lock_bits=0xCF
+atmega64.upload.tool=avrdude_noef
+atmega64.upload.maximum_data_size=4096
+
+atmega64.menu.clock.1=1 MHz (internal oscillator)
+atmega64.menu.clock.1.build.f_cpu=1000000L
+atmega64.menu.clock.1.build.speed=1
+atmega64.menu.clock.1.bootloader.low_fuses=0xA1
+atmega64.menu.clock.1.upload.speed=9600
+
+atmega64.menu.clock.8=8 MHz (internal oscillator)
+atmega64.menu.clock.8.build.f_cpu=8000000L
+atmega64.menu.clock.8.build.speed=8
+atmega64.menu.clock.8.bootloader.low_fuses=0xA4
+atmega64.menu.clock.8.upload.speed=38400
+
+atmega64.menu.clock.16=16 MHz (external oscillator)
+atmega64.menu.clock.16.build.f_cpu=16000000L
+atmega64.menu.clock.16.build.speed=16
+atmega64.menu.clock.16.bootloader.low_fuses=0xBF
+atmega64.menu.clock.16.upload.speed=115200
+
+atmega64.menu.clock.20=20 MHz (external oscillator)
+atmega64.menu.clock.20.build.f_cpu=20000000L
+atmega64.menu.clock.20.build.speed=20
+atmega64.menu.clock.20.bootloader.low_fuses=0x3F
+atmega64.menu.clock.20.upload.speed=115200
+
+atmega64.menu.bootloader.empty=Empty
+atmega64.menu.bootloader.empty.bootloader.high_fuses=0xD6
+atmega64.menu.bootloader.empty.bootloader.file=empty/empty.hex
+atmega64.menu.bootloader.empty.upload.maximum_size=65536
+
+atmega64.menu.bootloader.optiboot=Optiboot
+atmega64.menu.bootloader.optiboot.bootloader.high_fuses=0xDE
+atmega64.menu.bootloader.optiboot.bootloader.file=optiboot/{build.mcu}/optiboot_{build.mcu}_{build.speed}MHz.hex
+atmega64.menu.bootloader.optiboot.upload.maximum_size=65536
+atmega64.menu.bootloader.optiboot.upload.protocol=arduino
+
+##############################################################
+
+atmega328.name=ATMega 328P
+atmega328.build.core=arduino:arduino
+atmega328.build.mcu=atmega328p
+atmega328.build.mcu.variant=@dip28
+atmega328.build.board=AVR_ATMEGA328P
+atmega328.build.variant=arduino:standard
+atmega328.bootloader.tool=minipro
+atmega328.bootloader.unlock_bits=0x3F
+atmega328.bootloader.lock_bits=0xCF
+atmega328.bootloader.extended_fuses=0xFD
+atmega328.upload.tool=arduino:avrdude
+atmega328.upload.maximum_data_size=2048
+
+atmega328.menu.clock.1=1 MHz (internal oscillator)
+atmega328.menu.clock.1.build.f_cpu=1000000L
+atmega328.menu.clock.1.build.speed=1
+atmega328.menu.clock.1.bootloader.low_fuses=0x62
+atmega328.menu.clock.1.upload.speed=9600
+
+atmega328.menu.clock.8=8 MHz (internal oscillator)
+atmega328.menu.clock.8.build.f_cpu=8000000L
+atmega328.menu.clock.8.build.speed=8
+atmega328.menu.clock.8.bootloader.low_fuses=0xE2
+atmega328.menu.clock.8.upload.speed=38400
+
+atmega328.menu.clock.16=16 MHz (external oscillator)
+atmega328.menu.clock.16.build.f_cpu=16000000L
+atmega328.menu.clock.16.build.speed=16
+atmega328.menu.clock.16.bootloader.low_fuses=0xF7
+atmega328.menu.clock.16.upload.speed=115200
+
+atmega328.menu.clock.20=20 MHz (external oscillator)
+atmega328.menu.clock.20.build.f_cpu=20000000L
+atmega328.menu.clock.20.build.speed=20
+atmega328.menu.clock.20.bootloader.low_fuses=0xF7
+atmega328.menu.clock.20.upload.speed=115200
+
+atmega328.menu.bootloader.empty=Empty
+atmega328.menu.bootloader.empty.bootloader.high_fuses=0xD6
+atmega328.menu.bootloader.empty.bootloader.file=empty/empty.hex
+atmega328.menu.bootloader.empty.upload.maximum_size=32768
+
+atmega328.menu.bootloader.optiboot=Optiboot
+atmega328.menu.bootloader.optiboot.bootloader.high_fuses=0xDE
+atmega328.menu.bootloader.optiboot.bootloader.file=optiboot/{build.mcu}/optiboot_{build.mcu}_{build.speed}MHz.hex
+atmega328.menu.bootloader.optiboot.upload.protocol=arduino
+atmega328.menu.bootloader.optiboot.upload.maximum_size=32256
+
+##############################################################
+
+atmega1284p.name=ATMega 1284P
+atmega1284p.build.core=standard
+atmega1284p.build.mcu=atmega1284p
+atmega1284p.build.mcu.variant=
+atmega1284p.build.board=AVR_ATMEGA1284P
+atmega1284p.build.variant=standard
+atmega1284p.bootloader.tool=minipro
+atmega1284p.bootloader.unlock_bits=0x3F
+atmega1284p.bootloader.lock_bits=0xFF
+atmega1284p.bootloader.extended_fuses=0xFD
+atmega1284p.upload.tool=arduino:avrdude
+atmega1284p.upload.maximum_data_size=16384
+
+atmega1284p.menu.clock.1=1 MHz (internal oscillator)
+atmega1284p.menu.clock.1.build.f_cpu=1000000L
+atmega1284p.menu.clock.1.build.speed=1
+atmega1284p.menu.clock.1.bootloader.low_fuses=0x62
+atmega1284p.menu.clock.1.upload.speed=9600
+
+atmega1284p.menu.clock.8=8 MHz (internal oscillator)
+atmega1284p.menu.clock.8.build.f_cpu=8000000L
+atmega1284p.menu.clock.8.build.speed=8
+atmega1284p.menu.clock.8.bootloader.low_fuses=0xE2
+atmega1284p.menu.clock.8.upload.speed=38400
+
+atmega1284p.menu.clock.16=16 MHz (external oscillator)
+atmega1284p.menu.clock.16.build.f_cpu=16000000L
+atmega1284p.menu.clock.16.build.speed=16
+atmega1284p.menu.clock.16.bootloader.low_fuses=0xF7
+atmega1284p.menu.clock.16.upload.speed=115200
+
+atmega1284p.menu.clock.20=20 MHz (external oscillator)
+atmega1284p.menu.clock.20.build.f_cpu=20000000L
+atmega1284p.menu.clock.20.build.speed=20
+atmega1284p.menu.clock.20.bootloader.low_fuses=0xF7
+atmega1284p.menu.clock.20.upload.speed=115200
+
+atmega1284p.menu.clock.25=25.175 MHz (external oscillator)
+atmega1284p.menu.clock.25.build.f_cpu=25175000L
+atmega1284p.menu.clock.25.build.speed=25.175
+atmega1284p.menu.clock.25.bootloader.low_fuses=0xF7
+atmega1284p.menu.clock.25.upload.speed=115200
+
+atmega1284p.menu.bootloader.empty=Empty
+atmega1284p.menu.bootloader.empty.bootloader.high_fuses=0xD6
+atmega1284p.menu.bootloader.empty.bootloader.file=empty/empty.hex
+atmega1284p.menu.bootloader.empty.upload.maximum_size=131072
+
+atmega1284p.menu.bootloader.optiboot=Optiboot
+atmega1284p.menu.bootloader.optiboot.bootloader.high_fuses=0xDE
+atmega1284p.menu.bootloader.optiboot.bootloader.file=optiboot/{build.mcu}/optiboot_{build.mcu}_{build.speed}MHz.hex
+atmega1284p.menu.bootloader.optiboot.upload.protocol=arduino
+atmega1284p.menu.bootloader.optiboot.upload.maximum_size=130048
+
+##############################################################
+

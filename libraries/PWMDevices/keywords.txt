@@ -1,0 +1,21 @@
+###########################################
+# Syntax Coloring Map For PWMDevices
+#             Version 1.0
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+PWMDeviceOutput				KEYWORD1
+PWMDeviceInput				KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+attach				KEYWORD2
+write				KEYWORD2
+read				KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################

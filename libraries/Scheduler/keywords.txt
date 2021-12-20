@@ -1,0 +1,24 @@
+###########################################
+# Syntax Coloring Map For Scheduler
+#             Version 1.0
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+Task				KEYWORD1
+Scheduler			KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+calibtrate			KEYWORD2
+register_tasks		KEYWORD2
+run_mainloop		KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
+TASK_IDLE			LITERAL1
+FREQ_TO_DEADLINE	LITERAL1
+

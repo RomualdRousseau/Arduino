@@ -1,0 +1,26 @@
+###########################################
+# Syntax Coloring Map For ADS1115
+#             Version 1.0
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+ADS1115		KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+begin		KEYWORD2
+ready		KEYWORD2
+analogRead	KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
+ADS1115_ADDRESS0	LITERAL1
+ADS1115_ADDRESS1	LITERAL1
+ADS1115_A0			LITERAL1
+ADS1115_A1			LITERAL1
+ADS1115_A2			LITERAL1
+ADS1115_A3			LITERAL1

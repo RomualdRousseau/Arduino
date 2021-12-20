@@ -1,0 +1,21 @@
+###########################################
+# Syntax Coloring Map For I2CDevices
+#             Version 1.0
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+I2CDevices			KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+begin				KEYWORD2
+write_register		KEYWORD2
+read_buffer			KEYWORD2
+write_buffer		KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################

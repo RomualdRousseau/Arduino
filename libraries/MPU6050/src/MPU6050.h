@@ -1,0 +1,74 @@
+#ifndef MPU6050_h
+#define MPU6050_h
+
+#define MPU6050_I2C_ADDRESS				0x68
+
+#define MPU6050_REG_SMPLRT_DIV			0x19
+#define MPU6050_REG_CONFIG				0x1A
+#define MPU6050_REG_GYRO_CONFIG			0x1B
+#define MPU6050_REG_ACCEL_CONFIG		0x1C
+#define MPU6050_REG_PWR_MGMT_1			0x6B
+#define MPU6050_REG_PWR_MGMT_2			0x6C
+#define MPU6050_REG_ACCEL_XOUT_H		0x3B
+#define MPU6050_REG_GYRO_XOUT_H			0x43
+
+#define MPU6050_PWR1_DEVICE_RESET_BIT	6
+
+#define MPU6050_CLOCK_BIT				0
+#define MPU6050_CLOCK_MASK				0b111
+#define MPU6050_CLOCK_KEEP_RESET		0b111
+#define MPU6050_CLOCK_EXTERNAL_19MHZ	0b101
+#define MPU6050_CLOCK_EXTERNAL_32KHZ	0b100
+#define MPU6050_CLOCK_PLL_ZGYRO			0b011
+#define MPU6050_CLOCK_PLL_YGYRO			0b010
+#define MPU6050_CLOCK_PLL_XGYRO			0b001
+#define MPU6050_CLOCK_INTERNAL_8MHZ 	0b000
+
+#define MPU6050_DLPF_BIT				0
+#define MPU6050_DLPF_MASK				0b111
+#define MPU6050_DLPF_BW_256				0b000
+#define MPU6050_DLPF_BW_188				0b001
+#define MPU6050_DLPF_BW_98				0b010
+#define MPU6050_DLPF_BW_42				0b011
+#define MPU6050_DLPF_BW_20				0b100
+#define MPU6050_DLPF_BW_10				0b101
+#define MPU6050_DLPF_BW_5				0b110
+
+#define MPU6050_DHPF_BIT				0
+#define MPU6050_DHPF_MASK				0b111
+#define MPU6050_DHPF_RESET				0b000
+#define MPU6050_DHPF_5					0b001
+#define MPU6050_DHPF_2P5				0b010
+#define MPU6050_DHPF_1P25				0b11
+#define MPU6050_DHPF_0P63				0b100
+#define MPU6050_DHPF_HOLD				0b111
+
+#define MPU6050_SCALE_BIT				3
+#define MPU6050_SCALE_MASK				0b11
+#define MPU6050_SCALE_2000DPS			0b11
+#define MPU6050_SCALE_1000DPS			0b10
+#define MPU6050_SCALE_500DPS			0b01
+#define MPU6050_SCALE_250DPS			0b00
+
+#define MPU6050_RANGE_BIT				3
+#define MPU6050_RANGE_MASK				0b11
+#define MPU6050_RANGE_16G				0b11
+#define MPU6050_RANGE_8G				0b10
+#define MPU6050_RANGE_4G				0b01
+#define MPU6050_RANGE_2G				0b00
+
+#define MPU6050_CALIBRATE_SAMPLE		500
+
+class MPU6050
+{
+public:
+  const float gyro_scale_factor = 2.0 * 1000.0 / 65535.0;
+  
+  void begin(int scale = MPU6050_SCALE_1000DPS, int range = MPU6050_RANGE_4G);
+
+  void calibrate(float* gyro_zero_values);
+
+  void read(int* gyro_values, int* accel_values);
+};
+
+#endif

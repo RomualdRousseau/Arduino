@@ -1,0 +1,25 @@
+###########################################
+# Syntax Coloring Map For SBUSDevices
+#             Version 1.0
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+SBUSDevice			KEYWORD1
+SoftwareSBUSDevice  KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+begin				KEYWORD2
+available			KEYWORD2
+read				KEYWORD2
+getFlag				KEYWORD2
+
+###########################################
+# Constants (LITERAL1)
+###########################################
+SBUS_MAX_CHANNELS		LITERAL1
+SBUS_FLAG_SIGNAL_LOSS	LITERAL1
+SBUS_FLAG_FAILSAFE		LITERAL1
