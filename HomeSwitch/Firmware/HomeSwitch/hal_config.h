@@ -5,7 +5,7 @@
 // Update these with values suitable for your network.
 
 const char* ssid = "AirTies4920_SFYN";
-const char* password = "97F934k3P8";
+const char* password = ""; // Set the WIFI password here
 
 const char* mqtt_server = "mqtt-server.xanadu";
 const char* mqtt_user = "subscriber";
