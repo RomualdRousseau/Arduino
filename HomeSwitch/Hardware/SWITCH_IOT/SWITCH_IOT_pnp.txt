@@ -1,0 +1,45 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=SWITCH_IOT
+*Date=06:50:36
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;ptc;34.2259;-12.2917;90;Bottom;F1
+2;;;7.5184;-4.9099;0;Bottom;Copper Fill15
+3;;THT;18.9859;-35.1517;0;Bottom;VC-
+4;;relay-s108t02;39.3765;-18.809;-90;Bottom;U1
+5;;THT;26.6059;-4.6717;0;Bottom;AC1
+6;;;39.2556;-29.7638;0;Bottom;Copper Fill9
+7;;;40.3097;-28.6843;0;Bottom;Copper Fill10
+8;1000μF;200 mil [THT, electrolytic];50.7359;-5.9417;180;Bottom;C1
+9;;;45.6437;-14.1936;0;Bottom;Copper Fill3
+10;;;53.2256;-5.0242;0;Bottom;Copper Fill8
+11;1k;THT;36.7659;-35.1517;0;Bottom;R3
+12;;THT;5.26988;-30.0247;180;Bottom;OUT
+13;10k;THT;50.7359;-24.9917;180;Bottom;R1
+14;;;19.939;-35.1867;0;Bottom;Copper Fill13
+15;;;46.2787;-30.7544;0;Bottom;Copper Fill2
+16;;;4.953;-4.9099;0;Bottom;Copper Fill14
+17;;;29.9974;-20.0102;0;Bottom;Copper Fill5
+18;;;44.3991;-35.3264;0;Bottom;Copper Fill1
+19;;THT;50.7065;-34.0492;180;Bottom;Espessif Serial Wifi Modul 1
+20;;THT;5.26988;-9.70463;180;Bottom;IN
+21;;to-92;50.7359;-17.9178;0;Bottom;Q1
+22;;THT;22.7959;-4.6717;0;Bottom;AC2
+23;;;54.4956;-31.6434;0;Bottom;Copper Fill6
+24;;;17.907;-35.1867;0;Bottom;Copper Fill12
+25;10k;THT;50.7359;-27.5317;0;Bottom;R2
+26;;;7.5184;-25.1791;0;Bottom;Copper Fill16
+27;;THT;24.0659;-35.1517;0;Bottom;VC+
+28;;;48.8441;-11.6282;0;Bottom;Copper Fill4
+29;;;18.9357;-36.2154;0;Bottom;Copper Fill11
+30;;;53.2256;-6.9546;0;Bottom;Copper Fill7
