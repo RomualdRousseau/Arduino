@@ -12,8 +12,8 @@
 #include "tables.h"
 
 #define DIFF 1
-#define CHA 2
-#define CHB 3
+#define CHA  2
+#define CHB  3
 
 #define SINE     0
 #define TRIANGLE 1
@@ -29,7 +29,7 @@
 
 #define FS 20000.0                                              //-Sample rate (NOTE: must match tables.h)
 
-#define SET(x,y) (x |=(1<<y))		        		//-Bit set/clear macros
+#define SET(x,y) (x |=(1<<y))		        		  //-Bit set/clear macros
 #define CLR(x,y) (x &= (~(1<<y)))       			// |
 #define CHK(x,y) (x & (1<<y))           			// |
 #define TOG(x,y) (x^=(1<<y))            			//-+
@@ -236,6 +236,7 @@ public:
       break;
     }
   }
+  
   //*********************************************************************
   //  Setup Pitch [0-127]
   //*********************************************************************
@@ -253,16 +254,13 @@ public:
   {
     switch (env)
     {
-    case 1:
-      envs[voice] = (unsigned int)Env0;
-      break;
-    case 2:
+    case ENVELOPE1:
       envs[voice] = (unsigned int)Env1;
       break;
-    case 3:
+    case ENVELOPE2:
       envs[voice] = (unsigned int)Env2;
       break;
-    case 4:
+    case ENVELOPE3:
       envs[voice] = (unsigned int)Env3;
       break;
     default:
@@ -308,7 +306,6 @@ public:
   void setFrequency(unsigned char voice,float f)
   {
     PITCH[voice]=f/(FS/65535.0);
-
   }
 
   //*********************************************************************
