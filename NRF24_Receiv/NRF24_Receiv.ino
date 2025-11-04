@@ -1,83 +1,48 @@
-#include <SPI.h>
-#include <nRF24L01.h>
-#include <RF24.h>
-#include <Servo.h>
+#include "radio.h"
+#include "motor.h"
+#include "servo.h"
 
-RF24 radio(7, 8); // CE, CSN
-const byte address[6] = "00001";
-Servo myServo;
 int channels[16];
-
-byte get_bit(byte buf[], int off) {
-  int p = off / 8;
-  byte b = 1 << (off % 8);
-  return buf[p] & b;
-}
-
-void set_bit(byte buf[], int off, byte val) {
-  int p = off / 8;
-  byte b = 1 << (off % 8);
-
-  if (val == 0) {
-    buf[p] &= ~b;
-  } else {
-    buf[p] |= b;
-  }
-}
 
 void setup() {
   Serial.begin(115200);
+  Serial.println(MESSAGE);
 
   for (int i = 0; i < 16; i++) {
     channels[i] = 1500;
   }
-  
-  radio.begin();
-  radio.openReadingPipe(0, address);
-  radio.setPALevel(RF24_PA_MIN);
-  radio.startListening();
 
-  myServo.attach(2);
+  motor_init();
+  radio_init();
+  servo_init();
+
+  motor1_update(map(1700, 1000, 2000, -127, 128));
+  motor2_update(map(1700, 1000, 2000, -127, 128));
+  delay(500);
+  motor1_update(map(1500, 1000, 2000, -127, 128));
+  motor2_update(map(1500, 1000, 2000, -127, 128));
+  delay(50);
+  motor1_update(map(1300, 1000, 2000, -127, 128));
+  motor2_update(map(1300, 1000, 2000, -127, 128));
+  delay(500);
+  motor1_update(map(1500, 1000, 2000, -127, 128));
+  motor2_update(map(1500, 1000, 2000, -127, 128));
+  delay(50);  
 }
 
 void loop() {
-  update_commands();
-  
-  if (radio.available()) {
-    byte header;
-    radio.read(&header, 1);
-    if(header == 0x0F) {
-      read_one_packet();
-    }
+//  motor1_update(map(channels[0], 1000, 2000, -127, 128));
+//  motor2_update(map(channels[1], 1000, 2000, -127, 128));
+//  radio_update(channels);
+//  delay(10);
+
+  int pos = 0;
+  for (pos = 0; pos <= 180; pos += 1) {
+    servo_update(pos);
+    delay(15);
   }
-
-  delay(10);
-}
-
-void read_one_packet() {
-  byte tmp[22];
-  radio.read(tmp, 22);
-      
-  byte flag;
-  radio.read(&flag, 1);
-  
-  byte footer;
-  radio.read(&footer, 1);
-
-  if (footer != 0x00) {
-    Serial.println("error");
-    return;
+  for (pos = 180; pos >= 0; pos -= 1) {
+    servo_update(pos);
+    delay(15);
   }
-
-  for (int i = 0; i < 16; i++) {
-    for (int j = 0; j < 11; j++) {
-      byte val = get_bit(tmp, i * 11 + j);
-      set_bit((byte*) channels, i * 16 + j, val);
-    }
-  }
-}
-
-void update_commands() {
-  myServo.writeMicroseconds(channels[0]);
-  //Serial.println(channels[0]);
 }
